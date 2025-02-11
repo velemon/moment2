@@ -1,0 +1,16 @@
+{
+  "name": "moment1",
+  "version": "1.0.0",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "author": "Yasmine Budak",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "sharp": "^0.33.5"
+  },
+  "browserlist": "> 0.5%, last 2 versions, not dead"
+}
