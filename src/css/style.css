@@ -1,0 +1,35 @@
+body {
+    font-size: 1em;
+    font-family: monospace;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    max-width: 1000px;
+    margin: 5% 20% auto 20%;
+    padding: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.354);
+    box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.308);
+}
+
+label {
+    font-weight: bolder;
+}
+
+#search {
+    margin: 1em auto 5% auto;
+    width: 100%;
+    padding: 0;
+    height: 2em;
+}
+
+#columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+#columns th {
+    text-decoration: underline;
+}
