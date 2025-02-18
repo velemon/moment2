@@ -68,3 +68,33 @@ function filterData() {
     printCourses(filteredData);
 }
 
+//Sortering utifrån kurskod
+function sortCodes() {
+
+    //Sortera listan utifrån rubrik i alfabetisk ordning
+    courses.sort((a, b) => a.code > b.code ? 1 : -1);
+
+    //Skrivs ut till DOM
+    printCourses(courses); 
+
+}
+
+//Sortering utifrån kursnamn
+function sortCourses() {
+
+    //Sortera listan utifrån rubrik i alfabetisk ordning
+    courses.sort((a, b) => a.coursename > b.coursename ? 1 : -1);
+
+    //Skrivs ut till DOM
+    printCourses(courses); 
+}
+
+//Sortering utifrån progression
+function sortProgressions() {
+
+    //Sortera listan utifrån rubrik i alfabetisk ordning
+    courses.sort((a, b) => a.progression > b.progression ? 1 : -1);
+
+    //Skrivs ut till DOM
+    printCourses(courses); 
+}
