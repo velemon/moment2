@@ -26,10 +26,11 @@ label {
 }
 
 #columns {
-    display: flex;
-    justify-content: space-between;
+    text-decoration: underline;
+    width: 100%;
 }
 
-#columns th {
-    text-decoration: underline;
+td, th {
+    padding: 1em;
+    border-bottom: 1px solid #ddd;
 }

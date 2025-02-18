@@ -1,13 +1,20 @@
 "use strict";
 
 let courses = [];
+let sortedCourse = [];
+let codeEl = document.getElementById("code");
+let courseNameEl = document.getElementById("courseName");
+let progressionEl = document.getElementById("progression");
 
 //Funktion som körd när sidan laddas
 window.onload = () => {
     loadCourses();
 
-    //Händelselyssnare som filtrerar från sök
+    //Händelselyssnare som filtrerar
     document.querySelector("#search").addEventListener("input", filterData);
+    document.querySelector("#code").addEventListener("onClick", sortCode);
+    document.querySelector("#courseName").addEventListener("onClick", sortCoursename);
+    document.querySelector("#progression").addEventListener("onClick", sortProgression);
 }
 
 //Funktion för felhantering och hämntning av data
@@ -32,21 +39,21 @@ function printCourses(data) {
     //Variabler
     const table = document.querySelector("#table");
 
+    sortedCourse.sort((a, b) => a.name > b.name ? 1 : -1);
+
     //Rensar DOM
     table.innerHTML = "";
 
-    //Filtrerar ut kurskod, kursnam & progression och skickar tillbaka data
-    const codes = data.map(course => course.code);
-    const courseNames = data.map(course => course.coursename);
-    const progressions = data.map(course => course.progression);
-
     //Skrivs ut till DOM
-    
+    data.forEach(course => {
+        table.innerHTML +=
+            `<tr><td>${course.code}</td><td>${course.coursename}</td><td>${course.progression}</td></tr>`;
+    });
 }
 
 function filterData() {
     const searchPhrase = document.querySelector("#search").value;
-
+    
     //Funktion att söka efter kurskod, kursnamn eller progression med både stora och små boktäver
     const filteredData = courses.filter(course =>
         course.code.toLowerCase().includes(searchPhrase.toLowerCase()) ||
